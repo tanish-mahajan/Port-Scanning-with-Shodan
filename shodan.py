@@ -2,10 +2,9 @@ import requests,sys,socket
 import ipaddress
 
 def getipaddr(ip_str):
-    ip_str = socket.gethostbyname(ip_str)
     try:
-       ip_obj = ipaddress.ip_address(ip_str)
-       checkwithshodan(ip_str)
+        ip_str = socket.gethostbyname(ip_str)
+        validate_ip(ip_str)
     except ValueError:
         print("Invalid Ip address or Domain name")
 
